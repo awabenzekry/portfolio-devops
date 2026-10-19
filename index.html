@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — Awa Benzekry</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/premium.css">
 </head>
 <body>
   <header class="entete">
@@ -12,6 +13,7 @@
       <a class="logo" href="#accueil">Awa&nbsp;Benzekry</a>
       <ul>
         <li><a href="#apropos">À propos</a></li>
+        <li><a href="#parcours">Parcours</a></li>
         <li><a href="#competences">Compétences</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -25,25 +27,92 @@
       <img class="photo" src="css/images/awa.jpg" alt="Photo d'Awa Benzekry" onerror="this.style.display='none'">
       <span class="badge">Version 2</span>
       <h1>Bonjour, je suis <span>Awa Benzekry</span></h1>
-      <p>Élève ingénieure en Informatique et IA, passionnée par <strong id="role">le DevOps</strong></p>
+      <p>Élève ingénieure en Intelligence Artificielle &amp; Cybersécurité, passionnée par <strong id="role">la Data Science</strong></p>
+      <p class="dispo">🎯 À la recherche d'un stage de PFE de 6 mois</p>
       <a class="bouton" href="#projets">Voir mes projets</a>
+      <a class="bouton bouton-contour" href="#contact">Me contacter</a>
     </section>
 
     <section id="apropos" class="bloc">
       <h2>À propos</h2>
-      <p>Étudiante en 5e année à HESTIM, je m'intéresse à tout ce qui rend les systèmes plus fiables et plus intelligents :
-         automatisation des processus métier, intelligence artificielle appliquée et sécurité des réseaux.
-         Dans cet atelier, j'apprends à livrer des applications de façon automatisée avec Git, Docker et GitHub Actions.</p>
+      <p>Étudiante en cycle ingénieur à HESTIM Casablanca, après une formation en statistique et informatique décisionnelle à Dakar,
+         j'aime analyser et valoriser les données à grande échelle : Machine Learning, Data Science et Big Data.
+         Curieuse, rigoureuse et dotée d'une forte capacité d'adaptation, je cherche avant tout à apprendre au contact
+         d'équipes expérimentées et à progresser sur des projets concrets.</p>
+      <div class="chiffres">
+        <div><b class="compteur" data-cible="4">0</b><span>expériences</span></div>
+        <div><b class="compteur" data-cible="3">0</b><span>certifications</span></div>
+        <div><b class="compteur" data-cible="7">0</b><span>projets</span></div>
+        <div><b class="compteur" data-cible="4">0</b><span>langues</span></div>
+      </div>
+    </section>
+
+    <section id="parcours" class="bloc">
+      <h2>Parcours</h2>
+      <div class="onglets">
+        <button class="onglet actif" data-cible="experiences">Expériences</button>
+        <button class="onglet" data-cible="formation">Formation</button>
+      </div>
+
+      <ul class="timeline" id="experiences">
+        <li>
+          <span class="date">Mai 2026 – Août 2026</span>
+          <h3>Stagiaire, Département Informatique · Coprolib' (France)</h3>
+          <p>Automatisation de tâches métiers : report automatique des actions de l'équipe dans Asana avec Make, et scoring IA des prospects.</p>
+        </li>
+        <li>
+          <span class="date">Nov. 2025 – Oct. 2026</span>
+          <h3>Consultante commerciale · Coprolib' (France)</h3>
+          <p>Relation client, prospection, suivi de portefeuille, reporting et suivi des indicateurs d'activité.</p>
+        </li>
+        <li>
+          <span class="date">Juil. 2023 – Sept. 2023</span>
+          <h3>Stagiaire Analyste Fraude &amp; Arnaque · Sonatel (Dakar)</h3>
+          <p>Analyse de données pour identifier les comportements frauduleux, suivi et restitution des cas auprès de l'équipe métier.</p>
+        </li>
+        <li>
+          <span class="date">Juin 2020 – Sept. 2020</span>
+          <h3>Stagiaire Assistanat · Baradji Group International (Dakar)</h3>
+          <p>Recensement et suivi des conteneurs sous Excel, fiabilisation des bases de suivi logistique.</p>
+        </li>
+        <li>
+          <span class="date">2021 – 2023</span>
+          <h3>Vice-présidente, puis secrétaire adjointe · BEM Dakar, Bureau des Étudiants</h3>
+          <p>Organisation des réunions, rédaction des comptes rendus, remplacement du Président en cas d'absence.</p>
+        </li>
+      </ul>
+
+      <ul class="timeline cache" id="formation">
+        <li>
+          <span class="date">2025 – 2027</span>
+          <h3>Cycle Ingénieur d'État, IA &amp; Cybersécurité · HESTIM Casablanca</h3>
+        </li>
+        <li>
+          <span class="date">2023 – 2024</span>
+          <h3>Licence 3 Statistique et Informatique Décisionnelle · Université Alioune Diop de Bambey</h3>
+        </li>
+        <li>
+          <span class="date">2021 – 2023</span>
+          <h3>Bachelor Statistique et Informatique Décisionnelle · Bordeaux Management School, Dakar</h3>
+        </li>
+      </ul>
     </section>
 
     <section id="competences" class="bloc">
       <h2>Compétences techniques</h2>
       <ul class="cartes">
-        <li>HTML &amp; CSS</li>
+        <li>Machine Learning</li>
+        <li>Data Science</li>
+        <li>Big Data</li>
         <li>Python</li>
+        <li>SQL &amp; NoSQL</li>
+        <li>Oracle</li>
         <li>IA &amp; LLM (RAG, multi-agents)</li>
-        <li>Automatisation (Make, API REST)</li>
-        <li>Réseaux &amp; VPN Cisco</li>
+        <li>Automatisation (Make, API)</li>
+        <li>Excel avancé &amp; reporting</li>
+        <li>Réseaux : Packet Tracer, GNS3</li>
+        <li>PacketFence &amp; 802.1X</li>
+        <li>HTML &amp; CSS</li>
         <li>Git &amp; GitHub</li>
         <li>Docker &amp; Nginx</li>
         <li>Docker Compose</li>
@@ -51,51 +120,80 @@
         <li>Linux</li>
         <li>Kubernetes (notions)</li>
       </ul>
+
+      <h2 class="sous-titre">Certifications</h2>
+      <ul class="certifs">
+        <li><b>Machine Learning</b> · IBM</li>
+        <li><b>Introduction to Data Science</b> · IBM</li>
+        <li><b>Networking Basics</b> · Cisco</li>
+      </ul>
+
+      <h2 class="sous-titre">Langues</h2>
+      <ul class="certifs">
+        <li><b>Français</b> · langue maternelle</li>
+        <li><b>Bambara</b> · langue maternelle</li>
+        <li><b>Wolof</b> · langue maternelle</li>
+        <li><b>Anglais</b> · courant</li>
+      </ul>
     </section>
 
     <section id="projets" class="bloc">
       <h2>Projets réalisés</h2>
+      <div class="filtres">
+        <button class="filtre actif" data-cat="tous">Tous</button>
+        <button class="filtre" data-cat="data">Data &amp; IA</button>
+        <button class="filtre" data-cat="reseau">Réseaux &amp; sécurité</button>
+        <button class="filtre" data-cat="devops">DevOps</button>
+      </div>
       <div class="projets">
-        <article class="projet">
-          <h3>Automatisation CRM → Asana</h3>
-          <p>Stage chez Coprolib' : report automatique des actions de l'équipe (appels, SMS, mails) dans Asana avec Make, et scoring IA des prospects.</p>
-        </article>
-        <article class="projet">
+        <article class="projet" data-cat="data">
           <h3>Assistant RAG</h3>
           <p>Génération augmentée par recherche : un LLM qui répond à partir de documents.</p>
           <a href="https://github.com/awabenzekry/rag_project" target="_blank">Voir le code →</a>
         </article>
-        <article class="projet">
+        <article class="projet" data-cat="data">
           <h3>Système multi-agents</h3>
           <p>Prompt engineering pour faire collaborer plusieurs agents IA.</p>
           <a href="https://github.com/awabenzekry/agentic_project" target="_blank">Voir le code →</a>
         </article>
-        <article class="projet">
+        <article class="projet" data-cat="data">
           <h3>Analyse de sentiment</h3>
           <p>Classification de textes selon leur tonalité (notebook Python).</p>
           <a href="https://github.com/awabenzekry/sentiment_analysis" target="_blank">Voir le code →</a>
         </article>
-        <article class="projet">
+        <article class="projet" data-cat="data">
+          <h3>Consommation énergétique</h3>
+          <p>Analyse de données de consommation énergétique résidentielle.</p>
+        </article>
+        <article class="projet" data-cat="data">
+          <h3>Segmentation bancaire</h3>
+          <p>Segmentation de la clientèle d'une banque par Machine Learning.</p>
+        </article>
+        <article class="projet" data-cat="reseau">
+          <h3>Solution NAC PacketFence</h3>
+          <p>Contrôle d'accès réseau avec PacketFence et authentification 802.1X.</p>
+        </article>
+        <article class="projet" data-cat="reseau">
           <h3>VPN IPsec Cisco</h3>
           <p>Tunnel VPN IPsec entre deux routeurs Cisco.</p>
           <a href="https://github.com/awabenzekry/vpn-ipsec-cisco" target="_blank">Voir le code →</a>
         </article>
-        <article class="projet">
+        <article class="projet" data-cat="devops">
           <h3>Portfolio conteneurisé</h3>
           <p>Ce site, servi par Nginx dans un conteneur Docker.</p>
         </article>
-        <article class="projet">
+        <article class="projet" data-cat="devops">
           <h3>Pipeline CI/CD</h3>
-          <p>Tests automatiques, image Docker et déploiement.</p>
+          <p>Tests automatiques, image Docker et déploiement sur GitHub Pages à chaque push.</p>
         </article>
       </div>
     </section>
 
     <section id="contact" class="bloc">
       <h2>Contact</h2>
-      <p>Écrivez-moi : <a href="mailto:awa.benzekry@exemple.ma">awa.benzekry@exemple.ma</a></p>
-      <p>Retrouvez mes projets sur GitHub.</p>
-      <p>GitHub : <a href="https://github.com/awabenzekry" target="_blank">github.com/awabenzekry</a></p>
+      <p>Écrivez-moi : <a href="mailto:a.benzekry@hestim.ma">a.benzekry@hestim.ma</a></p>
+      <p>Retrouvez mes projets sur GitHub : <a href="https://github.com/awabenzekry" target="_blank">github.com/awabenzekry</a></p>
+      <p>📍 Casablanca, Maroc</p>
     </section>
   </main>
 
@@ -114,7 +212,7 @@
     });
 
     // Texte qui s'écrit tout seul
-    const roles = ["le DevOps", "l'intelligence artificielle", "la cybersécurité", "l'automatisation"];
+    const roles = ["la Data Science", "le Machine Learning", "le Big Data", "la cybersécurité", "le DevOps"];
     const cible = document.getElementById('role');
     let i = 0, j = roles[0].length, efface = true;
     function taper() {
@@ -130,16 +228,41 @@
     }
     setTimeout(taper, 1500);
 
-    // Sections qui apparaissent au défilement
+    // Sections qui apparaissent au défilement + compteurs animés
     const obs = new IntersectionObserver(entrees => entrees.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('visible');
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.compteur').forEach(c => {
+        if (c.dataset.fait) return;
+        c.dataset.fait = 1;
+        let n = 0; const fin = +c.dataset.cible;
+        const t = setInterval(() => { c.textContent = ++n; if (n >= fin) clearInterval(t); }, 150);
+      });
     }), { threshold: 0.15 });
     document.querySelectorAll('.bloc').forEach(s => { s.classList.add('reveal'); obs.observe(s); });
+
+    // Onglets Expériences / Formation
+    document.querySelectorAll('.onglet').forEach(o => o.addEventListener('click', () => {
+      document.querySelectorAll('.onglet').forEach(x => x.classList.remove('actif'));
+      o.classList.add('actif');
+      document.querySelectorAll('.timeline').forEach(t => t.classList.toggle('cache', t.id !== o.dataset.cible));
+    }));
+
+    // Filtres des projets
+    document.querySelectorAll('.filtre').forEach(f => f.addEventListener('click', () => {
+      document.querySelectorAll('.filtre').forEach(x => x.classList.remove('actif'));
+      f.classList.add('actif');
+      document.querySelectorAll('.projet').forEach(p => {
+        p.style.display = (f.dataset.cat === 'tous' || p.dataset.cat === f.dataset.cat) ? '' : 'none';
+      });
+    }));
 
     // Bouton retour en haut
     const haut = document.getElementById('haut');
     window.addEventListener('scroll', () => haut.classList.toggle('montre', window.scrollY > 400));
     haut.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
+  <script src="css/anim.js"></script>
+  <script src="css/premium.js"></script>
 </body>
 </html>
