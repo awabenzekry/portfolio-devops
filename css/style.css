@@ -1,19 +1,22 @@
-/* Portfolio DevOps — feuille de style (V1) */
+/* Portfolio DevOps — feuille de style (V2, palette rose) */
 :root {
   --principale: #FF8FAB;   /* rose soutenu */
   --accent: #FFB3C6;       /* rose moyen */
   --fond: #ffffff;
   --texte: #4A1F2C;        /* prune foncé */
   --gris: #FFE5EC;         /* rose très clair */
+  --fort: #C2185B;         /* framboise pour les titres */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: "Segoe UI", Helvetica, Arial, sans-serif;
   color: var(--texte);
   background: var(--fond);
   line-height: 1.6;
+  transition: background .3s, color .3s;
 }
 
 /* En-tête et menu */
@@ -23,36 +26,86 @@ body {
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
 }
 .menu a { color: #4A1F2C; text-decoration: none; }
+.menu a:hover { color: #fff; }
 .logo { font-weight: 700; font-size: 1.2rem; }
-.menu ul { list-style: none; display: flex; gap: 18px; align-items: center; }
+.menu ul { list-style: none; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
 
 /* Section d'accueil */
 .hero {
-  text-align: center; padding: 90px 20px;
+  text-align: center; padding: 80px 20px;
   background: linear-gradient(135deg, var(--principale), var(--gris));
   color: #4A1F2C;
 }
 .hero h1 { font-size: 2.4rem; }
-.hero h1 span { color: #C2185B; }
+.hero h1 span { color: var(--fort); }
+.hero strong { color: var(--fort); border-right: 2px solid var(--fort); padding-right: 4px; }
+.dispo { margin-top: 10px; font-weight: 600; }
 .bouton {
-  display: inline-block; margin-top: 24px; padding: 12px 26px;
-  background: #C2185B; color: #fff; border-radius: 30px;
-  text-decoration: none; font-weight: 600;
+  display: inline-block; margin: 24px 6px 0; padding: 12px 26px;
+  background: var(--fort); color: #fff; border-radius: 30px;
+  text-decoration: none; font-weight: 600; border: 2px solid var(--fort);
+  transition: transform .2s;
 }
+.bouton:hover { transform: translateY(-2px); }
+.bouton-contour { background: transparent; color: var(--fort); }
+.photo { display: block; margin: 0 auto 18px; width: 160px; height: 160px; border-radius: 50%;
+  object-fit: cover; border: 4px solid #fff; box-shadow: 0 8px 24px rgba(194,24,91,.25); }
+.badge { display: inline-block; margin-bottom: 14px; padding: 4px 14px;
+  border-radius: 20px; background: var(--fort); color: #fff; font-weight: 700; }
 
 /* Blocs de contenu */
 .bloc { max-width: 1000px; margin: auto; padding: 60px 20px; }
-.bloc h2 { color: #C2185B; margin-bottom: 18px; border-left: 5px solid var(--principale); padding-left: 12px; }
+.bloc h2 { color: var(--fort); margin-bottom: 18px; border-left: 5px solid var(--principale); padding-left: 12px; }
+.sous-titre { margin-top: 36px; font-size: 1.2rem; }
 
+/* Chiffres clés */
+.chiffres { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 14px; margin-top: 28px; }
+.chiffres div { background: var(--gris); border-radius: 12px; padding: 18px; text-align: center; }
+.chiffres b { display: block; font-size: 2rem; color: var(--fort); }
+
+/* Parcours : onglets + frise */
+.onglets, .filtres { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+.onglet, .filtre { border: 2px solid var(--principale); background: transparent; color: var(--texte);
+  padding: 6px 16px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: background .2s; }
+.onglet.actif, .filtre.actif, .onglet:hover, .filtre:hover { background: var(--principale); color: #fff; }
+.timeline { list-style: none; border-left: 3px solid var(--accent); padding-left: 22px; }
+.timeline li { position: relative; margin-bottom: 24px; }
+.timeline li::before { content: ""; position: absolute; left: -31px; top: 6px; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--fort); border: 3px solid var(--fond); }
+.timeline h3 { font-size: 1.05rem; }
+.date { font-size: .85rem; font-weight: 700; color: var(--fort); }
+.cache { display: none; }
+
+/* Compétences */
 .cartes { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
-.cartes li { background: var(--gris); padding: 16px; border-radius: 10px; text-align: center; font-weight: 600; }
+.cartes li { background: var(--gris); padding: 16px; border-radius: 10px; text-align: center; font-weight: 600; transition: transform .2s; }
+.cartes li:hover { transform: scale(1.05); }
+.certifs { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.certifs li { border: 1px solid var(--accent); border-radius: 20px; padding: 6px 14px; }
 
+/* Projets */
 .projets { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-.projet { border: 1px solid var(--accent); border-radius: 12px; padding: 22px; }
-.projet h3 { color: #C2185B; margin-bottom: 8px; }
+.projet { border: 1px solid var(--accent); border-radius: 12px; padding: 22px; transition: transform .2s, box-shadow .2s; }
+.projet:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(194,24,91,.15); }
+.projet h3 { color: var(--fort); margin-bottom: 8px; }
+.projet a, #contact a { color: var(--fort); font-weight: 600; text-decoration: none; }
+.projet a:hover, #contact a:hover { text-decoration: underline; }
 
 /* Pied de page */
 .pied { background: var(--principale); color: #4A1F2C; text-align: center; padding: 18px; }
+
+/* Interactions */
+.theme-btn { background: transparent; border: 1px solid #4A1F2C; color: #4A1F2C;
+  border-radius: 20px; padding: 4px 12px; cursor: pointer; font-size: 1rem; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
+.reveal.visible { opacity: 1; transform: none; }
+.haut-btn { position: fixed; right: 20px; bottom: 20px; width: 44px; height: 44px;
+  border-radius: 50%; border: none; background: var(--fort); color: #fff;
+  font-size: 1.3rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s; }
+.haut-btn.montre { opacity: 1; pointer-events: auto; }
+
+/* Mode sombre */
+body.sombre { --fond: #1f1418; --texte: #FFE5EC; --gris: #3a2530; --fort: #FF8FAB; }
 
 /* Responsive : petits écrans */
 @media (max-width: 600px) {
@@ -60,26 +113,63 @@ body {
   .menu ul { gap: 10px; font-size: .9rem; margin-top: 8px; }
 }
 
-/* ===== Personnalisation Awa ===== */
-.photo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
-  border: 4px solid #fff; box-shadow: 0 8px 24px rgba(194,24,91,.25); margin-bottom: 18px; }
-.hero strong { color: #C2185B; border-right: 2px solid #C2185B; padding-right: 4px; }
-.theme-btn { background: transparent; border: 1px solid #4A1F2C; color: #4A1F2C;
-  border-radius: 20px; padding: 4px 12px; cursor: pointer; font-size: 1rem; }
-.projet { transition: transform .2s, box-shadow .2s; }
-.projet:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(194,24,91,.15); }
-.projet a { color: #C2185B; font-weight: 600; text-decoration: none; }
-.projet a:hover { text-decoration: underline; }
-.cartes li { transition: transform .2s; }
-.cartes li:hover { transform: scale(1.05); }
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
-.reveal.visible { opacity: 1; transform: none; }
-.haut-btn { position: fixed; right: 20px; bottom: 20px; width: 44px; height: 44px;
-  border-radius: 50%; border: none; background: #C2185B; color: #fff;
-  font-size: 1.3rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s; }
-.haut-btn.montre { opacity: 1; pointer-events: auto; }
-body { transition: background .3s, color .3s; }
-body.sombre { --fond: #1f1418; --texte: #FFE5EC; --gris: #3a2530; }
-/* ===== V2 ===== */
-.badge { display: inline-block; margin-bottom: 14px; padding: 4px 14px;
-  border-radius: 20px; background: #C2185B; color: #fff; font-weight: 700; }
+/* ===== Animations ===== */
+.hero { position: relative; overflow: hidden; background-size: 200% 200%; animation: degrade 12s ease infinite; }
+.hero > *:not(.reseau) { position: relative; z-index: 1; }
+.reseau { position: absolute; inset: 0; z-index: 0; }
+@keyframes degrade { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+/* Anneau tournant autour de la photo */
+.photo { animation: entree 1s ease both, flotte 5s ease-in-out 1s infinite;
+  box-shadow: 0 0 0 6px rgba(255,255,255,.6), 0 0 0 12px rgba(194,24,91,.25), 0 12px 30px rgba(194,24,91,.35); }
+@keyframes flotte { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes entree { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+
+/* Entrée du texte d'accueil */
+.hero .badge, .hero h1, .hero p, .hero .bouton { animation: monte .8s ease both; }
+.hero .badge { animation-delay: .2s; } .hero h1 { animation-delay: .35s; }
+.hero p { animation-delay: .5s; } .hero .bouton { animation-delay: .7s; }
+@keyframes monte { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+.hero h1 span { background: linear-gradient(90deg, #C2185B, #FF8FAB, #C2185B); background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent; animation: brille 4s linear infinite; }
+@keyframes brille { to { background-position: 200% center; } }
+
+/* Bouton principal qui « respire » */
+.bouton:not(.bouton-contour) { animation: monte .8s ease .7s both, pulse 2.5s ease-in-out 2s infinite; }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(194,24,91,.45); } 50% { box-shadow: 0 0 0 12px rgba(194,24,91,0); } }
+
+/* Barre de progression */
+.progression { position: fixed; top: 0; left: 0; height: 4px; width: 0; z-index: 20;
+  background: linear-gradient(90deg, #C2185B, #FF8FAB); }
+
+/* Menu : soulignement animé + lien actif */
+.menu ul a { position: relative; }
+.menu ul a::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0;
+  background: #fff; transition: width .3s; }
+.menu ul a:hover::after, .menu ul a.actif::after { width: 100%; }
+.menu ul a.actif { color: #fff; }
+
+/* Titres de section : trait qui se dessine */
+.bloc h2 { position: relative; }
+.bloc h2::after { content: ""; display: block; height: 3px; width: 0; margin-top: 6px;
+  background: linear-gradient(90deg, #C2185B, transparent); transition: width 1s ease .3s; }
+.bloc.visible h2::after { width: 120px; }
+
+/* Apparition en cascade */
+.cascade { opacity: 0; transform: translateY(25px); transition: opacity .6s ease, transform .6s ease; }
+.cascade.vu { opacity: 1; transform: none; }
+.timeline li.cascade { transform: translateX(-25px); }
+.timeline li.cascade.vu { transform: none; }
+
+/* Cartes projets : reflet lumineux qui suit la souris */
+.projet { position: relative; overflow: hidden; transition: transform .15s, box-shadow .2s, opacity .6s; }
+.projet::before { content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .3s; pointer-events: none;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,143,171,.25), transparent 60%); }
+.projet:hover::before { opacity: 1; }
+.cartes li:hover { background: var(--principale); color: #fff; }
+
+/* Respect des personnes sensibles aux animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .cascade, .reveal { opacity: 1; transform: none; }
+}
