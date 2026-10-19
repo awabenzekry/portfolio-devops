@@ -80,3 +80,6 @@ body {
 .haut-btn.montre { opacity: 1; pointer-events: auto; }
 body { transition: background .3s, color .3s; }
 body.sombre { --fond: #1f1418; --texte: #FFE5EC; --gris: #3a2530; }
+/* ===== V2 ===== */
+.badge { display: inline-block; margin-bottom: 14px; padding: 4px 14px;
+  border-radius: 20px; background: #C2185B; color: #fff; font-weight: 700; }
