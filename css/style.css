@@ -1,0 +1,82 @@
+/* Portfolio DevOps — feuille de style (V1) */
+:root {
+  --principale: #FF8FAB;   /* rose soutenu */
+  --accent: #FFB3C6;       /* rose moyen */
+  --fond: #ffffff;
+  --texte: #4A1F2C;        /* prune foncé */
+  --gris: #FFE5EC;         /* rose très clair */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--texte);
+  background: var(--fond);
+  line-height: 1.6;
+}
+
+/* En-tête et menu */
+.entete { background: var(--principale); position: sticky; top: 0; z-index: 10; }
+.menu {
+  max-width: 1000px; margin: auto; padding: 14px 20px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+}
+.menu a { color: #4A1F2C; text-decoration: none; }
+.logo { font-weight: 700; font-size: 1.2rem; }
+.menu ul { list-style: none; display: flex; gap: 18px; align-items: center; }
+
+/* Section d'accueil */
+.hero {
+  text-align: center; padding: 90px 20px;
+  background: linear-gradient(135deg, var(--principale), var(--gris));
+  color: #4A1F2C;
+}
+.hero h1 { font-size: 2.4rem; }
+.hero h1 span { color: #C2185B; }
+.bouton {
+  display: inline-block; margin-top: 24px; padding: 12px 26px;
+  background: #C2185B; color: #fff; border-radius: 30px;
+  text-decoration: none; font-weight: 600;
+}
+
+/* Blocs de contenu */
+.bloc { max-width: 1000px; margin: auto; padding: 60px 20px; }
+.bloc h2 { color: #C2185B; margin-bottom: 18px; border-left: 5px solid var(--principale); padding-left: 12px; }
+
+.cartes { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+.cartes li { background: var(--gris); padding: 16px; border-radius: 10px; text-align: center; font-weight: 600; }
+
+.projets { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.projet { border: 1px solid var(--accent); border-radius: 12px; padding: 22px; }
+.projet h3 { color: #C2185B; margin-bottom: 8px; }
+
+/* Pied de page */
+.pied { background: var(--principale); color: #4A1F2C; text-align: center; padding: 18px; }
+
+/* Responsive : petits écrans */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.7rem; }
+  .menu ul { gap: 10px; font-size: .9rem; margin-top: 8px; }
+}
+
+/* ===== Personnalisation Awa ===== */
+.photo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+  border: 4px solid #fff; box-shadow: 0 8px 24px rgba(194,24,91,.25); margin-bottom: 18px; }
+.hero strong { color: #C2185B; border-right: 2px solid #C2185B; padding-right: 4px; }
+.theme-btn { background: transparent; border: 1px solid #4A1F2C; color: #4A1F2C;
+  border-radius: 20px; padding: 4px 12px; cursor: pointer; font-size: 1rem; }
+.projet { transition: transform .2s, box-shadow .2s; }
+.projet:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(194,24,91,.15); }
+.projet a { color: #C2185B; font-weight: 600; text-decoration: none; }
+.projet a:hover { text-decoration: underline; }
+.cartes li { transition: transform .2s; }
+.cartes li:hover { transform: scale(1.05); }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
+.reveal.visible { opacity: 1; transform: none; }
+.haut-btn { position: fixed; right: 20px; bottom: 20px; width: 44px; height: 44px;
+  border-radius: 50%; border: none; background: #C2185B; color: #fff;
+  font-size: 1.3rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s; }
+.haut-btn.montre { opacity: 1; pointer-events: auto; }
+body { transition: background .3s, color .3s; }
+body.sombre { --fond: #1f1418; --texte: #FFE5EC; --gris: #3a2530; }
